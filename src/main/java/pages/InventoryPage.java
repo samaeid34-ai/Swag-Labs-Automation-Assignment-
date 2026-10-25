@@ -72,7 +72,7 @@ public class InventoryPage {
             String name = item.findElement(By.className("inventory_item_name")).getText();
             if (name.equals(productName)) {
                 String priceText = item.findElement(By.className("inventory_item_price")).getText();
-                // Strip the "$" and convert to double[cite: 5]
+
                 return Double.parseDouble(priceText.replace("$", ""));
             }
         }
@@ -94,7 +94,7 @@ public class InventoryPage {
 
     public void logout() {
         driver.findElement(burgerMenuBtn).click();
-        // Wait or click logout
+
         try { Thread.sleep(1000); } catch (InterruptedException e) {}
         driver.findElement(logoutBtn).click();
     }
